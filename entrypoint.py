@@ -3,7 +3,6 @@
 import requests
 import base64
 import os
-import github_action_utils as gha_utils
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -19,41 +18,41 @@ USERNAMEREGISTRY = os.getenv('USERNAMEREGISTRY')
 PASSWORDREGISTRY = os.getenv('PASSWORDREGISTRY')
 
 if not URL:
-    gha_utils.error('URL is not set. Quitting.')
+    print('URL is not set. Quitting.')
     quit()
 
 if not USERNAME:
-    gha_utils.error('USERNAME is not set. Quitting.')
+    print('USERNAME is not set. Quitting.')
     quit()
 
 if not PASSWORD:
-    gha_utils.error('PASSWORD is not set. Quitting.')
+    print('PASSWORD is not set. Quitting.')
     quit()
 
 if not STACK:
-    gha_utils.error('STACK is not set. Quitting.')
+    print('STACK is not set. Quitting.')
     quit()
 
 if not ENVIRONMENT:
-    gha_utils.error('ENVIRONMENT is not set. Quitting.')
+    print('ENVIRONMENT is not set. Quitting.')
     quit()
 else:
     ENVIRONMENT = ENVIRONMENT.split(';')
 
 if not DOCKERCOMPOSE:
-    gha_utils.error('DOCKERCOMPOSE is not set. Quitting.')
+    print('DOCKERCOMPOSE is not set. Quitting.')
     quit()
 
 if not URLREGISTRY:
-    gha_utils.error('URLREGISTRY is not set. Quitting.')
+    print('URLREGISTRY is not set. Quitting.')
     quit()
 
 if not USERNAMEREGISTRY:
-    gha_utils.error('USERNAMEREGISTRY is not set. Quitting.')
+    print('USERNAMEREGISTRY is not set. Quitting.')
     quit()
 
 if not PASSWORDREGISTRY:
-    gha_utils.error('PASSWORDREGISTRY is not set. Quitting.')
+    print('PASSWORDREGISTRY is not set. Quitting.')
     quit()
 
 

@@ -10,7 +10,7 @@ LABEL repository="https://github.com/roanfranklin/api-docker-action"
 LABEL homepage="https://remf.com.br/"
 LABEL maintainer="Roan Franklin <roanfranklin@gmail.com>"
 
-RUN pip install --quiet --no-cache-dir python-dotenv requests github-action-utils
+RUN pip install --quiet --no-cache-dir python-dotenv requests
 
 ADD entrypoint.py /entrypoint.py
 
