@@ -13,6 +13,8 @@ PASSWORD = os.getenv('PASSWORD')
 STACK = os.getenv('STACK')
 ENVIRONMENT = os.getenv('ENVIRONMENT')
 DOCKERCOMPOSE = os.getenv('DOCKERCOMPOSE')
+USERNAMEREGISTRY = os.getenv('USERNAMEREGISTRY')
+PASSWORDREGISTRY = os.getenv('PASSWORDREGISTRY')
 
 if not URL:
     print('URL is not set. Quitting.')
@@ -40,6 +42,14 @@ if not DOCKERCOMPOSE:
     print('DOCKERCOMPOSE is not set. Quitting.')
     quit()
 
+if not USERNAMEREGISTRY:
+    print('USERNAMEREGISTRY is not set. Quitting.')
+    quit()
+
+if not PASSWORDREGISTRY:
+    print('PASSWORDREGISTRY is not set. Quitting.')
+    quit()
+
 
 headers = {
         'Authorization': 'Basic {}'.format(
@@ -54,7 +64,9 @@ headers = {
 data_api = {
 	"stack": STACK,
 	"environment": ENVIRONMENT,
-	"data": DOCKERCOMPOSE
+	"data": DOCKERCOMPOSE,
+    "username": USERNAMEREGISTRY,
+    "password": PASSWORDREGISTRY
 }
 
 x = requests.post('{0}/login'.format(URL), headers=headers)
