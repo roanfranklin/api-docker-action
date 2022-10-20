@@ -13,6 +13,7 @@ PASSWORD = os.getenv('PASSWORD')
 STACK = os.getenv('STACK')
 ENVIRONMENT = os.getenv('ENVIRONMENT')
 DOCKERCOMPOSE = os.getenv('DOCKERCOMPOSE')
+URLREGISTRY =  os.getenv('URLREGISTRY')
 USERNAMEREGISTRY = os.getenv('USERNAMEREGISTRY')
 PASSWORDREGISTRY = os.getenv('PASSWORDREGISTRY')
 
@@ -42,6 +43,10 @@ if not DOCKERCOMPOSE:
     print('DOCKERCOMPOSE is not set. Quitting.')
     quit()
 
+if not URLREGISTRY:
+    print('URLREGISTRY is not set. Quitting.')
+    quit()
+
 if not USERNAMEREGISTRY:
     print('USERNAMEREGISTRY is not set. Quitting.')
     quit()
@@ -65,6 +70,7 @@ data_api = {
 	"stack": STACK,
 	"environment": ENVIRONMENT,
 	"data": DOCKERCOMPOSE,
+    "registry": URLREGISTRY,
     "username": USERNAMEREGISTRY,
     "password": PASSWORDREGISTRY
 }
