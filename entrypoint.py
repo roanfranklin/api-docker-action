@@ -15,33 +15,33 @@ ISBASE64 = os.getenv('ISBASE64')
 ENVIRONMENT = os.getenv('ENVIRONMENT')
 DOCKERCOMPOSE = os.getenv('DOCKERCOMPOSE')
 
-if bool(URL.strip()):
+if not URL:
     print('URL is not set. Quitting.')
     quit()
 
-if bool(USERNAME.strip()):
+if not USERNAME:
     print('USERNAME is not set. Quitting.')
     quit()
 
-if bool(PASSWORD.strip()):
+if not PASSWORD:
     print('PASSWORD is not set. Quitting.')
     quit()
 
-if bool(STACK.strip()):
+if not STACK:
     print('STACK is not set. Quitting.')
     quit()
 
-if bool(ENVIRONMENT.strip()):
+if not ENVIRONMENT:
     print('ENVIRONMENT is not set. Quitting.')
     quit()
 else:
     ENVIRONMENT = ENVIRONMENT.split(';')
 
-if bool(DOCKERCOMPOSE.strip()):
+if not DOCKERCOMPOSE:
     print('DOCKERCOMPOSE is not set. Quitting.')
     quit()
 
-if bool(ISBASE64.strip()):
+if not ISBASE64:
   ISBASE64 = False
 
 headers = {
