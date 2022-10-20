@@ -11,7 +11,6 @@ URL = os.getenv('URL')
 USERNAME = os.getenv('USERNAME')
 PASSWORD = os.getenv('PASSWORD')
 STACK = os.getenv('STACK')
-ISBASE64 = os.getenv('ISBASE64')
 ENVIRONMENT = os.getenv('ENVIRONMENT')
 DOCKERCOMPOSE = os.getenv('DOCKERCOMPOSE')
 
@@ -41,8 +40,6 @@ if not DOCKERCOMPOSE:
     print('DOCKERCOMPOSE is not set. Quitting.')
     quit()
 
-if not ISBASE64:
-  ISBASE64 = False
 
 headers = {
         'Authorization': 'Basic {}'.format(
@@ -56,7 +53,6 @@ headers = {
 
 data_api = {
 	"stack": STACK,
-	"isbase64": ISBASE64,
 	"environment": ENVIRONMENT,
 	"data": DOCKERCOMPOSE
 }
