@@ -13,6 +13,6 @@ LABEL maintainer="Roan Franklin <roanfranklin@gmail.com>"
 RUN pip install --quiet --no-cache-dir python-dotenv requests
 
 ADD entrypoint.py /entrypoint.py
-RUN chmod +x /entrypoint.py
 
-ENTRYPOINT ["/entrypoint.py"]
+CMD ["/entrypoint.py"]
+ENTRYPOINT ["python"]
