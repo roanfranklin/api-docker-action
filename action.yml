@@ -1,0 +1,9 @@
+name: "API Docker"
+description: "Update Stack Docker (docker-compose) using backend API Docker"
+author: roanfranklin
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: refresh-cw
+  color: green
