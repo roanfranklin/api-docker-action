@@ -68,9 +68,9 @@ headers = {
 }
 
 data_api = {
-	"stack": STACK,
-	"environment": ENVIRONMENT,
-	"data": DOCKERCOMPOSE,
+    "stack": STACK,
+    "environment": ENVIRONMENT,
+    "data": DOCKERCOMPOSE,
     "registry": URLREGISTRY,
     "username": USERNAMEREGISTRY,
     "password": PASSWORDREGISTRY
