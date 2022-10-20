@@ -25,7 +25,7 @@ jobs:
         echo "::set-output name=dc_b64::$(cat docker-compose.yml | base64 -w 0)"
 
     - name: Update stack API Docker
-      uses: roanfranklin/api-docker-action@master
+      uses: roanfranklin/api-docker-action@main
       env:
         URL: https://apidocker.mydomains.com.br
         USERNAME: ${{ secrets.USERNAME }}
