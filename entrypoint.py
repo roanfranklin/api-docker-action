@@ -3,6 +3,7 @@
 import requests
 import base64
 import os
+import sys
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -19,41 +20,41 @@ PASSWORDREGISTRY = os.getenv('PASSWORDREGISTRY')
 
 if not URL:
     print('URL is not set. Quitting.')
-    quit()
+    sys.exit(5)
 
 if not USERNAME:
     print('USERNAME is not set. Quitting.')
-    quit()
+    sys.exit(5)
 
 if not PASSWORD:
     print('PASSWORD is not set. Quitting.')
-    quit()
+    sys.exit(5)
 
 if not STACK:
     print('STACK is not set. Quitting.')
-    quit()
+    sys.exit(5)
 
 if not ENVIRONMENT:
     print('ENVIRONMENT is not set. Quitting.')
-    quit()
+    sys.exit(5)
 else:
-    ENVIRONMENT = ENVIRONMENT.split(';')
+    ENVIRONMENT = ENVIRONMENT.split(',')
 
 if not DOCKERCOMPOSE:
     print('DOCKERCOMPOSE is not set. Quitting.')
-    quit()
+    sys.exit(5)
 
 if not URLREGISTRY:
     print('URLREGISTRY is not set. Quitting.')
-    quit()
+    sys.exit(5)
 
 if not USERNAMEREGISTRY:
     print('USERNAMEREGISTRY is not set. Quitting.')
-    quit()
+    sys.exit(5)
 
 if not PASSWORDREGISTRY:
     print('PASSWORDREGISTRY is not set. Quitting.')
-    quit()
+    sys.exit(5)
 
 
 headers = {
