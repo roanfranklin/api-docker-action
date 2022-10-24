@@ -83,4 +83,10 @@ if x.status_code == 200:
     hed = {'x-access-tokens': auth_token}
 
     y = requests.post('{0}/stack/updatev2'.format(URL), headers=hed, json=data_api)
-    print(y.json())
+    y_json = y.json()
+    status = y_json.get('status')
+    print(y_json)
+    if status or not status is None:
+        sys.exit(0)
+    else:
+        sys.exit(5)
