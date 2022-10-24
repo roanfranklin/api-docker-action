@@ -13,7 +13,7 @@ USERNAME = os.getenv('USERNAME')
 PASSWORD = os.getenv('PASSWORD')
 STACK = os.getenv('STACK')
 ENVIRONMENT = os.getenv('ENVIRONMENT')
-DOCKERCOMPOSE = os.getenv('DOCKERCOMPOSE')
+TAG = os.getenv('TAG')
 URLREGISTRY =  os.getenv('URLREGISTRY')
 USERNAMEREGISTRY = os.getenv('USERNAMEREGISTRY')
 PASSWORDREGISTRY = os.getenv('PASSWORDREGISTRY')
@@ -40,8 +40,8 @@ if not ENVIRONMENT:
 else:
     ENVIRONMENT = ENVIRONMENT.split(',')
 
-if not DOCKERCOMPOSE:
-    print('DOCKERCOMPOSE is not set. Quitting.')
+if not TAG:
+    print('TAG is not set. Quitting.')
     sys.exit(5)
 
 if not URLREGISTRY:
@@ -70,7 +70,7 @@ headers = {
 data_api = {
 	"stack": STACK,
 	"environment": ENVIRONMENT,
-	"data": DOCKERCOMPOSE,
+	"tag": TAG,
     "registry": URLREGISTRY,
     "username": USERNAMEREGISTRY,
     "password": PASSWORDREGISTRY
@@ -82,7 +82,7 @@ if x.status_code == 200:
     auth_token = x_json.get('token')
     hed = {'x-access-tokens': auth_token}
 
-    y = requests.post('{0}/stack/updatev2'.format(URL), headers=hed, json=data_api)
+    y = requests.post('{0}/stack/update'.format(URL), headers=hed, json=data_api)
     y_json = y.json()
     status = y_json.get('status')
     print(y_json)
