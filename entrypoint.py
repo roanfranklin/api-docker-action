@@ -35,8 +35,7 @@ if not STACK:
     sys.exit(5)
 
 if not ENVIRONMENT:
-    print('ENVIRONMENT is not set. Quitting.')
-    sys.exit(5)
+    ENVIRONMENT = []
 else:
     ENVIRONMENT = ENVIRONMENT.split(',')
 
@@ -79,7 +78,7 @@ data_api = {
 x = requests.post('{0}/login'.format(URL), headers=headers)
 if x.status_code == 200:
     x_json = x.json()
-    auth_token = x_json.get('token')
+    auth_token = x_json.get('x-access-tokens')
     hed = {'x-access-tokens': auth_token}
 
     y = requests.post('{0}/stack/update'.format(URL), headers=hed, json=data_api)
