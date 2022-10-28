@@ -89,3 +89,6 @@ if x.status_code == 200:
         sys.exit(0)
     else:
         sys.exit(5)
+else:
+    print({'status': False, 'message': 'error login'})
+    sys.exit(5)
